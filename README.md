@@ -4,7 +4,6 @@ Use this as a hardhat template to start rapid smart contract development using t
 
 <!-- TODO: Features
 - Hardhat React
-- CI + Coverage and Gas estimations
 - Husky to generate types and lint checking before commits
  -->
 
