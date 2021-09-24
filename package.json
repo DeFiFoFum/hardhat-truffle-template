@@ -4,7 +4,28 @@
   "description": "Use this as a hardhat template to start rapid smart contract development using typescript and other mind blowing features.",
   "main": "index.js",
   "scripts": {
-    "test": "hardhat test"
+    "test": "hardhat test",
+    "test:gas": "export REPORT_GAS=true && yarn test",
+    "coverage": "hardhat coverage",
+    "test:full": "yarn test:gas && yarn coverage",
+    "test:ci": "yarn test:full",
+    "compile": "hardhat compile",
+    "compile:force": "hardhat compile --force",
+    "deploy:dev": "hardhat run --network localhost scripts/deploy.ts",
+    "deploy:bsc": "hardhat run --network bsc scripts/deploy.ts",
+    "deploy:bsc-testnet": "hardhat run --network bsc-testnet scripts/deploy.ts",
+    "deploy:polygon": "hardhat run --network polygon scripts/deploy.ts",
+    "deploy:polygon-testnet": "hardhat run --network polygon-testnet scripts/deploy.ts",
+    "clean": "npx hardhat clean",
+    "testrpc": "npx hardhat node",
+    "eslint": "npx eslint '**/*.js'",
+    "eslint:fix": "npx eslint '**/*.js' --fix",
+    "prettier": "npx prettier '**/*.{json,sol,md}' --check",
+    "prettier:fix": "npx prettier '**/*.{json,sol,md}' --write",
+    "solhint": "npx solhint 'contracts/**/*.sol'",
+    "solhint:fix": "npx solhint 'contracts/**/*.sol' --fix",
+    "lint": "yarn eslint && yarn prettier && yarn solhint",
+    "lint:fix": "yarn eslint:fix && yarn prettier:fix && yarn solhint:fix"
   },
   "repository": {
     "type": "git",
@@ -27,6 +48,8 @@
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-etherscan": "^2.1.6",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@typechain/ethers-v5": "^7.1.1",
+    "@typechain/hardhat": "^2.3.0",
     "@types/mocha": "^9.0.0",
     "chai": "^4.3.4",
     "dotenv": "^10.0.0",
@@ -46,6 +69,7 @@
     "solhint": "^3.3.6",
     "solidity-coverage": "^0.7.17",
     "ts-node": "^10.2.1",
+    "typechain": "^5.1.2",
     "typescript": "^4.4.3"
   }
 }

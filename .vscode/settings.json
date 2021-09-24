@@ -1,9 +1,10 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#fffb0a",
-        "activityBar.foreground": "#000",
-        "titleBar.activeBackground": "#000000",
-        "titleBar.activeForeground": "#F2FCFF"
-    },
-    "mochaExplorer.files": "test/**/*.{j,t}s"
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#fffb0a",
+    "activityBar.foreground": "#000",
+    "titleBar.activeBackground": "#000000",
+    "titleBar.activeForeground": "#F2FCFF"
+  },
+  "mochaExplorer.files": "test/**/*.{j,t}s",
+  "cSpell.words": ["Hola", "mundo", "testrpc"]
 }
