@@ -1,4 +1,5 @@
 # hardhat-typescript-template
+[![tests](https://github.com/DeFiFoFum/hardhat-typescript-template/actions/workflows/tests.yml/badge.svg)](https://github.com/DeFiFoFum/hardhat-typescript-template/actions/workflows/tests.yml)
 
 Use this as a hardhat template to start rapid smart contract development using typescript and other mind blowing features.
 
@@ -11,7 +12,7 @@ Use this as a hardhat template to start rapid smart contract development using t
 
 ### Typescript
 
-- Typescript support: Write tests and scripts in Typescript
+Typescript support: Write tests and scripts in Typescript
 
 ### Typechain
 
@@ -101,7 +102,7 @@ yarn testrpc
 ```
 
 # Scripts & Tasks
-
+TODO
 <!-- TODO: Provide info on writing and running scripts -->
 <!-- TODO: Provide info on writing and running tasks -->
 
