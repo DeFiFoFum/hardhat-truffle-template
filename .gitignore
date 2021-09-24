@@ -1,3 +1,6 @@
+# Solidity
+typechain/
+
 # Logs
 logs
 *.log
