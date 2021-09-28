@@ -1,18 +1,44 @@
-# hardhat-typescript-template
-[![tests](https://github.com/DeFiFoFum/hardhat-typescript-template/actions/workflows/tests.yml/badge.svg)](https://github.com/DeFiFoFum/hardhat-typescript-template/actions/workflows/tests.yml)
-
-Use this as a hardhat template to start rapid smart contract development using typescript and other mind blowing features.
+# Hardhat Truffle Template
+[![tests](https://github.com/DeFiFoFum/hardhat-truffle-template/actions/workflows/tests.yml/badge.svg)](https://github.com/DeFiFoFum/hardhat-truffle-template/actions/workflows/tests.yml)
 
 <!-- TODO: Features
 - Hardhat React
 - Husky to generate types and lint checking before commits
+- Contract size
  -->
+ <!-- # Scripts & Tasks -->
+<!-- TODO: Provide info on writing and running scripts -->
+<!-- TODO: Provide info on writing and running tasks -->
+
+Use this as a hardhat/truffle template to start rapid smart contract development using typescript and other mind blowing features.
+
+## Motivation
+[Truffle Framework](https://www.trufflesuite.com/) and [HardHat](https://hardhat.org/) are both solidity smart contract development frameworks in which developers normally choose one over the other. Hardhat is generally the framework of choice for modern solidity development, but Truffle has a very helpful plugin, [truffle-plugin-verify](https://github.com/rkalis/truffle-plugin-verify#readme) for quickly verifying contracts after deployment. While Hardhat has a tool for this, it still requires much more effort to verify complex projects after deployment.  
+
+Because `truffle-plugin-verify` uses the Truffle artifacts after deployment, we need to use truffle for **deploying** and **verifying**.  
+
+Hardhat fills in all of the other needed tools for rapid development including typescript support and broad spectrum of plugins which make testing and UI integration easier.
+
+### Truffle
+* **Deploy Contracts**
+* **Verify Contracts**
+
+### Hardhat
+* **Testing**
+* **Gas Reporting**
+* **Generate Contract Types**
+* **Run Scripts**
+* **UI Integration Support**
+
+<br>
 
 ## Features
 
 ### Typescript
 
-Typescript support: Write tests and scripts in Typescript
+**Tests and Scripts**: Use typescript to write smart contract tests and scripts.  
+**Integration**: Using Typechain and hardhat plugins, smart contract types are generated to integrate with the contracts through ethers.
+
 
 ### Typechain
 
@@ -32,8 +58,8 @@ yarn test
 
 **Mocha**: This repo uses mocha as the main testing framework
 
-- Use [vscode-mocha-test-adapter](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) to run individual unit tests
-  - Make sure to set the vscode option to `"mochaExplorer.files"` to `"test/**/*.{j,t}s"` [more info](https://hardhat.org/guides/vscode-tests.html)
+Use [vscode-mocha-test-adapter](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) to run individual unit tests.  
+_Make sure to set the vscode option to `"mochaExplorer.files"` to `"test/**/*.{j,t}s"` [more info](https://hardhat.org/guides/vscode-tests.html)_
 
 **Chai**: The mocha tests use the [chai assertion library](https://www.chaijs.com/).
 
@@ -56,18 +82,20 @@ yarn test:gas
 # Contracts
 
 ## Compile Contracts
+Contracts located in the [contracts/](./contracts) directory will be compiled using the `solidity` version in the [solidity.config](./solidity.config.ts) file.
 
-Contracts located in the [contracts/](./contracts) directory will be compiled using the `solidity` version in the [hardhat.config.ts](./hardhat.config.ts) file.
+Depending on the need, contracts can be compiled with **Hardhat** or **Truffle**:
 
-`yarn compile` || `yarn compile:force`
+**Hardhat**  
+`yarn compile` || `yarn compile --force`  
+
+**Truffle**  
+`yarn compile:truffle` || `yarn compile:truffle --all`  
+ 
 
 ## Deploy Contracts
 
-After compiling your contracts you can deploy them to a network of your choice. For
-
-```bash
-yarn compile
-```
+After defining the network configuration as needed in [solidity.config](./solidity.config.ts), you can deploy using one of the following commands:  
 
 ```bash
 # Deploy locally
@@ -80,18 +108,23 @@ yarn deploy:polygon
 yarn deploy:polygon-testnet
 ```
 
+**Configuration**   
+The [solidity.config](./solidity.config.ts) file offers a place to store network specific deployment variables to ensure proper configuration for every network.  
+
 ## Verify Contracts
-**_NOTE: This verification tool is not as robust as [truffle-plugin-verify](https://www.npmjs.com/package/truffle-plugin-verify). May add truffle specifically for that :thinking:_**
+**Configuration**
+Make sure to provide your network specific API key in a `.env` file. See [.env.example](./.env.example) for examples.
 
-To try out Etherscan verification, you first need to deploy a contract to an Ethereum network that's supported by Etherscan, such as Ropsten.
 
-In this project, copy the .env.template file to a file named .env, and then edit it to fill in the details. Enter your Etherscan API key, your Ropsten node URL (eg from Alchemy), and the private key of the account which will send the deployment transaction. With a valid .env file in place, first deploy your contract:
-
-After deployment, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_ADDRESS` in this command:
-
-```shell
-npx hardhat verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello, Hardhat!"
+```bash
+yarn verify:bsc
+yarn verify:bsc-testnet
+yarn verify:polygon
+yarn verify:polygon-testnet
 ```
+
+_If new contracts are added, the verification scripts need to be updated in [package.json](./package.json)_
+
 
 ## Development Blockchain
 
@@ -101,10 +134,7 @@ Use hardhat's built in blockchain node to run tests locally.
 yarn testrpc
 ```
 
-# Scripts & Tasks
-TODO
-<!-- TODO: Provide info on writing and running scripts -->
-<!-- TODO: Provide info on writing and running tasks -->
+
 
 # Code Formatting
 
