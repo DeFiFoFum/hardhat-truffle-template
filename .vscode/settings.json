@@ -6,5 +6,9 @@
     "titleBar.activeForeground": "#F2FCFF"
   },
   "mochaExplorer.files": "test/**/*.{j,t}s",
-  "cSpell.words": ["Hola", "mundo", "testrpc"]
+  "cSpell.words": [
+    "nomiclabs",
+    "testrpc"
+  ],
+  "solidity.compileUsingRemoteVersion": "v0.8.4+commit.c7e474f2"
 }

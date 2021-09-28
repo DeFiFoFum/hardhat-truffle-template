@@ -5,8 +5,10 @@
     "strict": true,
     "esModuleInterop": true,
     "outDir": "dist",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types", "./types"]
   },
   "include": ["./scripts", "./test", "./typechain"],
+  "exclude": ["node_modules", "build", "cache", "artifacts"],
   "files": ["./hardhat.config.ts"]
 }

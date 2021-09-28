@@ -112,3 +112,6 @@ node_modules
 #Hardhat files
 cache
 artifacts
+
+#Truffle files
+build
