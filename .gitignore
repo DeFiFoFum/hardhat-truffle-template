@@ -1,5 +1,6 @@
 # Solidity
 typechain/
+coverage.json
 
 # Logs
 logs
