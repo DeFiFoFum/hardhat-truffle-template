@@ -1,7 +1,7 @@
 {
   "name": "hardhat-truffle-template",
   "version": "0.1.0",
-  "description": "Use this as a hardhat template to start rapid smart contract development using typescript and other mind blowing features.",
+  "description": "Use this as a template to start rapid smart contract development using the best of hardhat, truffle and typescript.",
   "main": "index.js",
   "scripts": {
     "postinstall": "yarn compile",
