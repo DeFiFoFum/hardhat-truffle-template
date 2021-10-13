@@ -4,6 +4,8 @@
   "description": "Use this as a template to start rapid smart contract development using the best of hardhat, truffle and typescript.",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "prepublish": "yarn build",
     "postinstall": "yarn compile",
     "test": "hardhat test",
     "test:gas": "export REPORT_GAS=true && yarn test",
