@@ -2,6 +2,7 @@
 [![tests](https://github.com/DeFiFoFum/hardhat-truffle-template/actions/workflows/tests.yml/badge.svg)](https://github.com/DeFiFoFum/hardhat-truffle-template/actions/workflows/tests.yml)
 
 <!-- TODO: Features
+- FIXME: Documentation tools!!
 - Hardhat React
 - Husky to generate types and lint checking before commits
 - Contract size
