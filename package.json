@@ -40,6 +40,9 @@
     "type": "git",
     "url": "git+https://github.com/DeFiFoFum/hardhat-truffle-template.git"
   },
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "keywords": [
     "solidity",
     "hardhat",
