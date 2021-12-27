@@ -22,20 +22,18 @@ require("ts-node").register({
   files: true,
 });
 
-const HDWalletProvider = require('@truffle/hdwallet-provider');
-const { networkConfig, solcConfig } = require('./solidity.config.ts');
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+const { networkConfig, solcConfig } = require("./solidity.config.ts");
 
- const baseConfig = {
+const baseConfig = {
   networks: {
     development: {
-      host: "127.0.0.1",     // Localhost (default: none)
-      port: 8545,            // Standard BSC port (default: none)
-      network_id: "*",       // Any network (default: none)
+      host: "127.0.0.1", // Localhost (default: none)
+      port: 8545, // Standard BSC port (default: none)
+      network_id: "*", // Any network (default: none)
     },
   },
-  plugins: [
-    'truffle-plugin-verify',
-  ],
+  plugins: ["truffle-plugin-verify"],
   api_keys: {
     etherscan: process.env.ETHERSCAN_API_KEY,
     bscscan: process.env.BSCSCAN_API_KEY,
@@ -46,25 +44,29 @@ const { networkConfig, solcConfig } = require('./solidity.config.ts');
   // Configure your compilers
   compilers: {
     solc: solcConfig,
-  }
-}
+  },
+};
 
 /**
  * Because this project uses both hard-hat and truffle. This allows for a singular configuration file
- * for both. 
+ * for both.
  */
 function populateNetworkConfig(config) {
   for (const networkId in networkConfig) {
     const currentNetworkConfig = networkConfig[networkId];
     const truffleNetworkConfig = {
-      provider: () => new HDWalletProvider(currentNetworkConfig.mnemonic, currentNetworkConfig.rpcUrl),
+      provider: () =>
+        new HDWalletProvider(
+          currentNetworkConfig.mnemonic,
+          currentNetworkConfig.rpcUrl
+        ),
       network_id: currentNetworkConfig.chainId,
       confirmations: 2,
       timeoutBlocks: 200,
-      skipDryRun: true
-    }
+      skipDryRun: true,
+    };
 
-    config.networks = {...config.networks, [networkId]: truffleNetworkConfig};
+    config.networks = { ...config.networks, [networkId]: truffleNetworkConfig };
   }
   return config;
 }
