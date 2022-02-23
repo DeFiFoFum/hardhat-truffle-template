@@ -1,4 +1,4 @@
-import { getDeploymentVariables } from '../solidity.config';
+import { getDeploymentVariables } from '../deploy.config';
 
 module.exports = (artifacts: any) => { // Truffle.Artifacts
   return async (
