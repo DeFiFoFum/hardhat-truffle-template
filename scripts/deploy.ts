@@ -1,9 +1,16 @@
+/**
+ * NOTE: This file is currently used as a Hardhat deploy script example, but this project currently uses 
+ *  Truffle deployments in `../migrations`. `../migrations/2_deploy_contracts.ts` provides Typescript deployment support
+ */
+
+
 // We require the Hardhat Runtime Environment explicitly here. This is optional
 // but useful for running the script in a standalone fashion through `node <script>`.
 //
 // When running the script with `npx hardhat run <script>` you'll find the Hardhat
 // Runtime Environment's members available in the global scope.
 import hre from "hardhat";
+const { ethers } = hre;
 
 async function main() {
   // Hardhat always runs the compile task when running scripts with its command
@@ -14,7 +21,7 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const Greeter = await hre.ethers.getContractFactory("Greeter");
+  const Greeter = await ethers.getContractFactory("Greeter");
   const greeter = await Greeter.deploy("Hello, Hardhat!");
 
   await greeter.deployed();

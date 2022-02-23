@@ -2,6 +2,8 @@ import "@nomiclabs/hardhat-ethers"
 import { ethers } from "hardhat";
 import { Signer } from "ethers";
 import { expect } from "chai";
+// typechain
+import { Greeter } from '../typechain'
 
 describe("Greeter", function () {
   let accounts: Signer[];
@@ -12,7 +14,8 @@ describe("Greeter", function () {
 
   it("Should return the new greeting once it's changed", async function () {
     const Greeter = await ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.deploy("Hello, world!");
+    // using typechain for typesafe contracts
+    const greeter = await Greeter.deploy("Hello, world!") as Greeter;
     await greeter.deployed();
 
     expect(await greeter.greet()).to.equal("Hello, world!");
