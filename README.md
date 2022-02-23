@@ -43,7 +43,7 @@ The [deploy.config.ts](./deploy.config.ts) acts at the parent configuration file
 The main configuration file above is processed inside the configuration files of **Hardhat**  and **Truffle**.
 - [hardhat.config.ts](./hardhat.config.ts)
   - Add Hardhat **tasks**
-- [truffle-config](./truffle-config)
+- [truffle-config.js](./truffle-config.js)
   - Set `confirmations`
   - Set `timeoutBlocks`
   - Set `skipDryRun`
