@@ -6,6 +6,7 @@
 - Hardhat React
 - Husky to generate types and lint checking before commits
 - Contract size
+- Mainnet fork testing
  -->
  <!-- # Scripts & Tasks -->
 <!-- TODO: Provide info on writing and running scripts -->
@@ -32,6 +33,20 @@ Hardhat fills in all of the other needed tools for rapid development including t
 * **UI Integration Support**
 
 <br>
+
+**Configuration**   
+The [deploy.config.ts](./deploy.config.ts) acts at the parent configuration file for the project.
+- Setup Solidity compiler options
+- Add networks
+- Add deployment variables which can be returned based on deployment network  
+
+The main configuration file above is processed inside the configuration files of **Hardhat**  and **Truffle**.
+- [hardhat.config.ts](./hardhat.config.ts)
+  - Add Hardhat **tasks**
+- [truffle-config](./truffle-config)
+  - Set `confirmations`
+  - Set `timeoutBlocks`
+  - Set `skipDryRun`
 
 ## Features
 
@@ -108,9 +123,6 @@ yarn deploy:bsc-testnet
 yarn deploy:polygon
 yarn deploy:polygon-testnet
 ```
-
-**Configuration**   
-The [solidity.config](./solidity.config.ts) file offers a place to store network specific deployment variables to ensure proper configuration for every network.  
 
 ## Verify Contracts
 **Configuration**

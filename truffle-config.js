@@ -23,7 +23,7 @@ require("ts-node").register({
 });
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const { networkConfig, solcConfig } = require("./solidity.config.ts");
+const { networkConfig, solcConfig } = require("./deploy.config.ts");
 
 const baseConfig = {
   networks: {

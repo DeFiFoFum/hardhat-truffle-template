@@ -1,4 +1,4 @@
-import { networkConfig, solcConfig, mainnetMnemonic, testnetMnemonic } from './solidity.config';
+import { networkConfig, solcConfig, mainnetMnemonic, testnetMnemonic } from './deploy.config';
 import { HardhatUserConfig } from "hardhat/config";
 import { HttpNetworkUserConfig } from "hardhat/types";
 import '@nomiclabs/hardhat-ethers'
@@ -20,7 +20,6 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     console.log(account.address);
   }
 });
-
 
 
 /**
