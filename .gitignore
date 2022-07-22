@@ -1,5 +1,6 @@
 # Solidity
 typechain/
+typechain-types/
 coverage.json
 
 # Logs

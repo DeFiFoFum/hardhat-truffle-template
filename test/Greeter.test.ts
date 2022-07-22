@@ -11,7 +11,7 @@ const {
 } = require('@openzeppelin/test-helpers');
 // import { advanceNumBlocks } from './helpers/openzeppelinExtensions'
 // typechain
-import { Greeter } from '../typechain'
+import { Greeter } from '../typechain-types'
 
 describe("Greeter", function () {
   let accounts: Signer[];
