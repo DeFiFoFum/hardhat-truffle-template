@@ -1,5 +1,5 @@
 import { getDeploymentVariables } from '../deploy.config';
-import { Greeter } from '../typechain'
+import { Greeter } from '../typechain-types'
 
 module.exports = (artifacts: any) => { // Truffle.Artifacts
   return async (
