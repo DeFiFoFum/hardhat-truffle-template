@@ -1,3 +1,4 @@
+## 🛑 DEPRECATED in place of [DeFiFoFum/hardhat-template](https://github.com/DeFiFoFum/hardhat-template)
 # Hardhat Truffle Template
 [![tests](https://github.com/DeFiFoFum/hardhat-truffle-template/actions/workflows/tests.yml/badge.svg)](https://github.com/DeFiFoFum/hardhat-truffle-template/actions/workflows/tests.yml)
 
